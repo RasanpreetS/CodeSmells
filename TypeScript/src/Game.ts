@@ -1,6 +1,7 @@
 export class Game {
     private _lastSymbol: string = ' ';
     private _board: Board = new Board();
+    private readonly BOARD_SIZE: number = 3;
 
     public Play(symbol: string, x: number, y: number) : void {
         //if first move
@@ -79,10 +80,10 @@ class Board
     private _plays : Tile[] = [];
 
     constructor()
-    {
-        for (let i = 0; i < 3; i++)
+    {//using BOARDSIZE Variable
+        for (let i = 0; i < BOARDSIZE; i++)
         {
-            for (let j = 0; j < 3; j++)
+            for (let j = 0; j < this.BOARDSIZE; j++)
             {
                 const tile : Tile = {X :i, Y:j, Symbol:" "};
                 this._plays.push(tile);
